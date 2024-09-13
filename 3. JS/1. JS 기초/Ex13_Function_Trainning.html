@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 1. 두 개의 수를 받아서 더해주는 plus 라는 함수 생성
+        const plus = (num1,num2) =>{
+            return num1+num2 ;
+        }
+
+        // 2. 두 개의 수를 받아서 빼주는 minus 라는 함수 생성
+        // * 빼기 연산은 큰 값에서 작은 값을 뺴주는 연산
+        function minus(num1,num2){
+            return num1 > num2? num1-num2 : num2 -num1 ;
+        }
+
+        // 3. 사용자에게 숫자를 두 번 입력받는다. 
+        let input1 = parseInt(prompt("숫자를 입력하세요"));
+        let input2 = parseInt(prompt("숫자를 한 번 더 입력하세요"));
+
+        // 4. 사용자에게 기호도 입력받는다. 
+        let operator = prompt('기호를 입력하세요 ( + , - )');
+
+        // 5. 연산의 결과를 팝업창으로 띄워주기
+        if(operator==='+'){
+            alert('결과는 '+ plus(input1,input2)+'입니다.');
+        }else if(operator === '-'){
+            alert('결과는 : '+ minus(input1,input2)+'입니다.');
+        }
+    </script>
+</body>
+</html>

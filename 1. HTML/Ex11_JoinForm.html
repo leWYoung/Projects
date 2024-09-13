@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- step1 : table 폭 400 /높이 50 / gray // tr 높이 35 / whitesmoke-->
+    <form action="#">
+        <table border 1 width="400px">
+
+            <caption>
+                < 회원 가입 양식>
+            </caption>
+
+            <tr height="50" bgcolor="gray" align="left">
+                <th colspan="2">Step 1 : 아이디 / 비밀번호 입력 </th>
+            </tr>
+
+            <tr height="35" bgcolor="whitesmoke">
+                <td align="right"> 아이디 : </td>
+                <td><input type="text" placeholder="아이디를 입력해주세요" autofocus name="id"></td>
+            </tr>
+
+            <tr height="35" bgcolor="whitesmoke">
+                <td align="right"> 비밀번호 : </td>
+                <td "><input type=" password" placeholder="비밀번호를 입력해주세요" name="pw"></td>
+            </tr>
+
+            <tr height="35" bgcloor="whitesmoke">
+                <td align="right">비밀번호 확인 : </td>
+                <td><input type="password" placeholder="비밀번호를 다시 입력해주세요" name="pw"></td>
+            </tr>
+
+            <tr align="left" height="50" bgcolor="gray">
+                <th colspan="2"> Step 2 : 개인정보</th>
+            </tr>
+
+            <tr height="35" bgcolor="whitesmoke">
+                <td align="right">성별 :</td>
+                <td>남 <input type="radio" value="남자" name="gender">
+                    여 <input type="radio" value="여자" name="gender"></td>
+            </tr>
+
+            <tr height="35" bgcolor="whitesmoke">
+                <td align="right"> 혈액형 : </td>
+                <td><select name="bloodtype">
+                        <option value="a">A형</option>
+                        <option value="b">B형</option>
+                        <option value="ab">AB형</option>
+                        <option value="o">O형</option>
+                    </select></td>
+            </tr>
+
+            <tr height="35" bgcolor="whitesmoke">
+                <td align="right">생일 : </td>
+                <td><input type="date" name="birthrate"></td>
+            </tr>
+
+            <tr align="left" height="50px" bgcolor="gray">
+                <th colspan="2">Step3 : 선호도 </th>
+            </tr>
+
+            <tr height="35" bgcolor="whitesmoke">
+                <td align="right">취미 : </td>
+                <td>축구<input type="checkbox" value="축구" name="hobby">
+                    야구<input type="checkbox" value="야구" name="hobby">
+                    농구<input type="checkbox" value="농구" name="hobby">
+                </td>
+            </tr>
+
+            <tr height="35" bgcolor="whitesmoke">
+                <td align="right">좋아하는 색깔 : </td>
+                <td><input type="color"> </td>
+            </tr>
+
+            <tr align="left">
+                <th height="50px" bgcolor="gray" colspan="2">Step 4 : 적고 싶은 말</th>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <textarea name="borad" rows="8" cols="60" style="resize : none;"></textarea>
+                </td>
+            </tr>
+
+            <tr bgcolor="whitesmoke" height="35">
+                <td colspan="2" align="center">
+                    <input type="submit">
+                    <input type="reset">
+                </td>
+            </tr>
+        </table>
+
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*  계층 선택자 이해하기 */
+        /* 1. 자손 선택자 : 띄어쓰기 */
+        /* 1-1. div 를 기준으로 자손인 span 의 색을 tomato로 변경하기 */
+        div span {
+            color: tomato;
+        }
+
+        div strong {
+            color : black;
+        }
+
+        div #test {
+            color : yellow;
+        }
+
+        div 
+        /* 1-2. div 를 기준으로 자손인 li의 색을 blue로 변경하기 */
+        div li {
+            color: blue;
+        }
+
+        /* 2. 자식 선택자 : > */
+        /* ol을 기준으로 자식인 span 의 색 hotpink 로 바꾸기 */
+        ol>span {
+            color: hotpink;
+        }
+
+        /* 3. 근접 후행 선택자 : + */
+        /* 첫 번째 li를 기준으로 근접후행  */
+        li+li {
+            color: red;
+        }
+
+        /* 4. 후행 선택자 : ~ 
+        /* 4-1. 첫번째 li를 기준으로 형제 관계인 후행  */
+        li~li {
+            color: lime;
+        }
+
+        /* 4-2. 두 번째 li를 기준으로 형제 관계인 li색 orange */
+        /* n번째 선택자 사용방법*/
+         li:nth-child(2)~li {
+            color: orange;
+        } 
+    </style>
+</head>
+
+<body>
+    <div>
+        <strong id="test">우리 반 규칙!</strong>
+        <ol>
+            <li>지각하지 않기!</li>
+            <li>결석하지 않기!</li>
+            <span>불가피할 땐 담임쌤한테 꼭 연락하기!</span>
+            <li>복습하기!</li>
+        </ol>
+    </div>
+</body>
+
+</html>

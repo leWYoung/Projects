@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="https://flexible.img.hani.co.kr/flexible/normal/922/470/imgdb/original/2019/1205/20191205500909.jpg"
+        width="200px">
+    <br>
+    <input type="text" id="name">
+    <button id="btn">변경!</button>
+
+    <script>
+        // 1. 사진 두개 구하기
+        // img1 = 아깽이 사진
+        let img1 = "https://flexible.img.hani.co.kr/flexible/normal/922/470/imgdb/original/2019/1205/20191205500909.jpg"
+        // img2 = 뚱냥이 사진
+        let img2 = "https://i.namu.wiki/i/bEakEX_TwanYtABzsV2949mfvnCc5vj6WvpMu_J3xEyOhRtrT5yG34Yy4PxLWcybI-jf2sgxRnZd8Kvv3tjQVA.webp"
+
+        // 2. 사용자가 input 태그 안에 입력한 값을 확인
+        // 2-1)'변경!'버튼을 클릭했을 때
+        alert('최애 고양이 < 아깽이 or 뚱냥이 >');
+        document.getElementById('btn').addEventListener('click', () => {
+            // 2-2) input 태그 안에 있는 값을 가져오기
+            let input = document.getElementById('name').value;
+            console.log('input : ', input);
+
+        // 3. 값에 맞게 사진 배치
+        // '아깽이' -> 아깽이 사진 / '뚱냥이' -> 뚱냥이 사진
+        //  만약 둘 외에 다른 값을 입력시 alert 창으로 '잘못 입력하셨습니다' 출력
+        // 3-1) 이미지 태그 가져오기
+            let img = document.querySelector('img');
+            console.log(img);
+            
+            if (input === '아깽이') {
+                img.src = img1;
+                img.width = "200";
+            } else if (input === '뚱냥이') {
+                img.src = img2;
+                img.width = "600";
+            } else {
+                alert('잘못 입력하셨습니다');
+            }
+            document.getElementById('name').value = '';
+        });
+    </script>
+</body>
+
+</html>

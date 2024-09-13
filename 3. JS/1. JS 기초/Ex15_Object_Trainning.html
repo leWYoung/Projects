@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 포켓몬 만들기
+         포켓몬 배열 내에 객체가 들어있는 형태로 생성 
+         3마리 넣기 => 배열 안에 객체 3개 생성   
+         객체 구성 : name , type, level   */
+
+         let pokemon = [
+            {
+                name : '피카츄',
+                type : '전기',
+                level : 3 
+            },
+            {
+                name : '파이리',
+                type : '불',
+                level : 4
+            },
+            {
+                name : '꼬부기',
+                type : '에스파',
+                level : 'next'
+            }
+         ];
+
+            // 문자 포매팅
+            // `` 백틱 
+            for (let i = 0; i < pokemon.length; i++) {
+                    console.log(`저의 빼이보릿 포케또몬스타는 ${pokemon[i].name}이고 ${pokemon[i].type}속성이고 ${pokemon[i].level} level 입니다`);
+                }
+
+            console.log('저의 최애 포케몬스타는 '+ pokemon[0].name+'이고 '+pokemon[0].type+' 속성이며, '
+                +pokemon[0].level+' level 입니다.'
+            );
+            console.log('저의 최애 포케몬스타는 '+ pokemon[1].name+'이고 '+pokemon[1].type+' 속성이며, '
+                +pokemon[1].level+' level 입니다.'
+            );
+            console.log('저의 최애 포케몬스타는 '+ pokemon[2].name+'이고 '+pokemon[2].type+' 이며, '
+                +pokemon[2].level+' level 입니다.'
+            );
+            
+    </script>
+</body>
+</html>

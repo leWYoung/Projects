@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- # Ajax( 비동기 통신 )
+        : 새로 고침을 받지 않고 클라이언트가 원하는 부분만 응답을 받기 위해서 사용!  -->
+    <button>요청하기!</button>
+    
+    <script>
+        let sendData ={data : 'You Rock! Hell yeah~'}
+        // 버튼 클릭시 tomcat server로 요청 전송
+        // 단, 새로 고침이 일어나면 안댐~
+        $('button').on('click', () => {
+            // jQuery 라이브러리 활용!
+            $.ajax({
+                //  1. 어떤 url로 요청할지(요청 url)
+                url: "http://localhost:8081/AjaxTest/Ex01",
+                data : sendData,  
+                //  2. 요청이 성공했을 때 실행할 함수  
+                success: function (res) {
+                // 함수에 매개변수를 받아오겠다고 적어줄 시 자동으로 서버에서 응답받은 데이터 가져올 수 있음
+                console.log('요청 sucks!!😱');
+                console.log(res);
+                
+            },
+            //  3. 요청이 실패했을 때 실행할 함수
+            error: function (e) {
+                // 함수에 매개변수를 받아오겠다고 적어줄 시 자동으로 서버에서 응답받은 데이터 가져올 수 있음
+                    console.log('요청 rocks!!😎');
+                    console.log(e);
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <span id="num">0</span>
+    <br>
+    <button id="plus">+1</button>
+    <button id="minus">-1</button>
+
+    <script>
+        /* 1. +1 버튼 누를시 span tag 값이 1증가
+           2. -1 버튼 누를시 span tag 값이 1감소 
+           단, 0밑으로는 값이 나오지 않아야 함, jQuery를 사용 */
+        let span = $('#num');
+        console.log(span);
+
+        $('#plus').click(() => {
+            let plus = parseInt(span.text())+1;
+            span.text(plus);
+        });
+
+        $('#minus').click(()=>{
+            if(span.text()>0){
+                let minus = parseInt(span.text())-1;
+                span.text(minus);}
+        });
+    </script>
+
+    <script>
+        let num = $('#num');
+        console.log(num);
+
+        $('#plus').click(()=>{
+            let spanNum = parseInt(num.text());
+            num.text(spanNum+1);
+        })
+
+        $('#minus').click(()=>{
+            let spanNum = parseInt(num.text());
+            if(spanNum>0){
+            num.text(spanNum-1);
+            }
+        })
+
+    </script>
+</body>
+
+</html>

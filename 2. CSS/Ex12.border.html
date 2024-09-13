@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        #red{
+            background-color: red;
+            border: solid 10px blue;
+            box-sizing: border-box;
+            /* # border의 속성값
+                 1. border-style : 스타일 지정
+                 2. border-width : 테두리 두께
+                 3. border-color : 테두리 색깔 */
+        }
+        #blue{
+            background-color: blue ;
+            border-radius: 50px;
+        }
+        #green{    
+            background-color: green;
+            border-top-right-radius: 50%;
+            border-bottom-left-radius: 80%;
+            /* % 단위 사용시 : 너비와 높이의 상대적인 크기이기 때문에 직사각형 모양이 무너질 수 있다  */
+        }
+    </style>
+
+</head>
+<body>
+    <div id="red"></div>
+    <div id="blue"></div>
+    <div id="green"></div>
+</body>
+</html>

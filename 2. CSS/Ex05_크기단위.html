@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 브라우저 기본 폰트 사이즈 : 16px */
+        /* 1. px사용 : span1을 16px보다 작게하기 */
+        #span1 {
+            font-size: 10px;
+            /* px : 디스플레이서 가장 기본이 되는 단위, 사용자 환경에 상관없이 고정된 값 */
+        }
+
+        /* 2. em 사용 : 부모의 크기를 기준으로하는 상대 배수 단위 */
+        p{
+            font-size: 10px;
+        }
+        #span2 {
+            font-size: 2em;
+            /* em : 부모의 크기*입력 크기  
+               ex) 2em = 현재 부모 크기의 2배*/
+        }
+
+        /* 3. rem 사용 : html 문서의 폰트 크기에 따른 배수 단위  */
+        #span3 {
+            font-size: 3rem;
+            /* rem : html의 기본 값(16px) * 입력 크기
+                ex) 3rem = 현재 문서 크기의 3배  */
+        }
+    </style>
+</head>
+
+<body>
+    <span id="span1">px로 조정</span>
+
+    <p>
+        <!--부모 크기를 따라감-->
+        <span id="span2">em으로 조정</span>
+    </p>
+
+    <span id="span3">rem으로 조정</span>
+</body>
+
+</html>

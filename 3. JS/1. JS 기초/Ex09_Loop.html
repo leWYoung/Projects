@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 1. 랜덤한 수 하나 뽑기! (1~10)
+        // Math.random() : 0~1 사이의 난수 생성
+        let ran = parseInt((Math.random() * 10)) + 1;
+        while (true) {
+            let input = parseInt(prompt('숫자를 입력하세요 >> '));
+            if (input > ran) {
+                alert('입력한 숫자보다 작은 수입니다.');
+            } else if (input < ran) {
+                alert('입력한 숫자보다 큰 수 입니다.');
+            } else{
+                alert('🎉정답입니다!🎉');
+                break;
+            }
+        }
+    </script>
+</body>
+
+</html>

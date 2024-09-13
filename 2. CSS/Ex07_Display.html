@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DP</title>
+    <style>
+        /* 화면 분할 
+        div > p > span 순서로 사용 */
+
+        /* 1. display : block 
+        1) 종류 : p, div, table .. 기본 값이 block 
+        2) 무조건 가로로 한 줄을 차지하는 특성이다!
+        3) width, height 값 설정이 가능
+        */
+        p {
+            background-color: tan;
+            display : inline-block ;
+        }
+
+        /* 2. display : inline
+        1) 종류 : span, a ... 기본 값이 inline
+        2) 내가 담은 컨텐츠까지만 크기로 삼는 속성
+        3) ✨width, height 값 설정이 불가능  */
+        span {
+            background-color: forestgreen;
+            display : none ;
+        }
+
+        /* 3. display : inline-block
+        block(너비와 높이 지정 가능) + inline(옆에 자리가 있으면 다른 요소가 올 수 있음) */
+
+        /* 4. display : none
+        화면에 요소가 보이지 않게 함  */
+
+        /* 그룹 선택자 */
+        p,
+        span {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>p태그</p>
+    <p>p태그</p>
+    <p>p태그</p>
+
+    <span>span태그</span>
+    <span>span태그</span>
+    <span>span태그</span>
+
+</body>
+
+</html>

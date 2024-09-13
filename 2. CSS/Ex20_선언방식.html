@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #no2{
+    /* 2. 내부 스타일 방식 :  style 태그 사용해서 css 적용*/
+            color: blue !important;
+            background-color: greenyellow;
+        }
+
+        </style>
+    <link rel="stylesheet" href=".//Ex20_외부스타일.css">
+    <!-- 3. 외부 스타일 방식 
+            1) link 태그를 사용해서 외부 css 적용
+            2) 보안 유지에 좋음
+            3) 여러 링크 연결 가능, 링크 태그가 연결된 순서대로 적용됨                                      
+     -->
+    <style>
+    /* 4. import 방식 
+          : style 태그 내에 @import를 사용해서 css 적용 */
+        @import url('Ex20_임포트방식.css');
+    </style>
+</head>
+<body>
+    <h1 style="color: yellow ; background-color: black;">1. 인라인 방식</h1>
+    <h1 id="no2">2. 내부 스타일 방식</h1>
+    <h1 id="no3">3. 외부 스타일 방식</h1>
+    <h1 id="no4">4. import 방식</h1>
+</body>
+</html>

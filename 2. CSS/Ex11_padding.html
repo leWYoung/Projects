@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        #red{
+            background-color: #ff0000;
+            padding: 50px; 
+            /* padding 은 안쪽에 여백을 생성함 */
+            /* html 요소의 크기가 변경 됨 */
+        }
+        #green{
+            background-color: rgb(20, 156, 20);
+            padding: 20px;
+            box-sizing: border-box;
+            /* # box-sizing  
+                1. contents-box (기본값) : 너비와 높이가 컨텐츠까지 적용됨 
+                2. border-box : 너비와 높이가 contents + padding + border 을 모두 포함한 크기로 결정 */
+        }
+        #yellow{
+            background-color: yellow;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="red">이우영</div>
+    <div id="green">신 강</div>
+    <div id="yellow">임경남</div>
+</body>
+</html>

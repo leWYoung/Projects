@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <button>영화정보 가져오기</button>
+    <div></div>
+
+    <script>
+        // 1. 영화정보 가져오기 버튼 클릭 시
+        $('button').on('click', () => {
+            // 2. 20240827 일간 박스오피스 데이터 요청(비동기 통신)
+            $.ajax({
+                // 요청 url 
+                url: "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=9ddf53988c8ce4b0e96fed43c422d5a6&targetDt=20240827",
+                // 응답 받을 데이터 형식 지정
+                dataType: "json",
+                // 성공 할때 실행할 함수
+                success: function (res) {
+                    // 요청에 성공했다면 console 창에 응답 데이터 출력
+                    console.log(res);
+                    // 랭킹 1위의 영화 이름만 출력
+                    // console.log(res.boxOfficeResult.dailyBoxOfficeList[0].movieNm);
+                    // let movie = res.boxOfficeResult.dailyBoxOfficeList[0];
+                    // 1위 영화 이름 화면에 출력하기(div 내부)
+                    // $('div').append(`<p>${movie.movieNm}</p>`)
+                    // 1위 영화 순위, 개봉일 출력
+                    // $('div').append(`<p>현재 순위 : ${movie.rank} <br> 개봉일 : ${movie.openDt}</p>`)
+
+                    let movieList = res.boxOfficeResult.dailyBoxOfficeList;
+                    $('div').html('<table id ="td" border="1"></table>');
+                    for (let i = 0; i < movieList.length; i++) {
+                        $('#td').append(`<tr> <td>${movieList[i].rank}</td><td>${movieList[i].movieNm}</td><td>${movieList[i].openDt}</td></tr>`)
+                    }
+
+                    // 1~10위까지의 영화 데이터를 표 형식으로 출력
+                    // let code = '<table border ="1">';
+
+                    // for (let i = 0; i < movieList.length; i++) {
+                    //     code +=
+                    //     `<tr>
+                    //         <td>${movieList[i].rank}</td>
+                    //         <td>${movieList[i].movieNm}</td>
+                    //         <td>${movieList[i].openDt}</td>
+                    //     </tr>`
+                    // }
+
+                    // code += '</table>';
+                    // $('div').html(code);
+                },
+                // 실패했을 때 실행할 함수
+                error: function (e) {
+                    console.log(e);
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

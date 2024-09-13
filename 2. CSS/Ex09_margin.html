@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height : 100px
+        }
+        #red{
+            background-color: red;
+            margin: 50px;
+            /* 모든 방향에 바깥 여백 부여 */
+        }
+        #yellow{
+            background-color: yellow;
+            margin: auto;
+            /* 웹페이지 정가운데 오게 여백 부여하기 */
+        }
+        #blue{
+            background-color: blue;
+            margin-left: 50px;
+            margin-bottom: 50px;
+            }
+        #green{
+            background-color: green;
+            margin-top: 20px;
+            /* margin 병합(상쇄) 현상이 일어남
+               : 두 개의 block요소의 상하 margin 영역이 겹칠 경우 margin으로 포함됨 */
+            }
+        
+        
+    </style>
+
+
+
+</head>
+<body>
+    <!-- div 태그에 id, class 값을 부여하면서 만들기 = css 선택자를 사용해서 만들 수 있다.
+         1. id값 #속성값
+          ex) #red
+         2. id값을 가진 div 여러개 만들 때
+          ex) #red+#yellow+#blue+#green / + =>근접후행   -->
+
+    <div id="red"></div>
+    <div id="yellow"></div>
+    <div id="blue"></div>
+    <div class="div" id="green"></div>
+
+</body>
+</html>

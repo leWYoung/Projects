@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h2 {
+        /* 글자 크기 조절 
+       : 글자 크기 확인 후 사이즈 변경하기   */
+        font-size: 50px;
+        /* 글자 두께 조절
+       : 100 (가장 얇음) ~ 900 ( 가장 두꺼움 ) 까지 이용 가능*/
+        font-weight: 100;
+        /* 글꼴 지정 
+       1. 글꼴의 전체 이름을 띄어쓰기 포함해서 작성
+       2. 글꼴 작성시 비슷한 폰트를 여러개 작성해준다. 
+       => 사용자 혹은 컴퓨터가 인식하지 못하는 경우 왼쪽 값부터 오른쪽으로 다음 값이 사용됨*/
+        font-family: 'G마켓 산스 TTF', 'HY견고딕', '맑은 고딕';
+        font-style: italic;
+        color: mediumspringgreen
+    }
+
+    p {
+        font-size: 25px;
+        font-family: '궁서';
+        font-weight: bold;
+    }
+
+    /* # 선택자의 종류 
+    1. 전체 선택자 : *
+    2. 태그 선택자 : 태그를 불러옴 (ex. h2, p ...)
+    3. 아이디 선택자 : # 으로 표시가 됨, 중복 X
+    4. 클래스 선택자 : 마침표(.)로 표시 됨, 중복 O
+    5. 계층 선택자 : 자식계층도 자손계층에 포함된다. 
+        "공백" : 자손 선택자  
+        ">" : 자식 선택자
+        "+" : 형제(근접후행:바로 뒤) 선택자  
+        "~" : 형제(후행: 뒤에 있는 모든) 선택자  
+    6. 그룹 선택자 : 컴마(,)를 사용 */
+</style>
+
+<body>
+    <h2>
+        데이터 디자인 엔지니어 양성과정
+    </h2>
+    <p>
+        이우영
+    </p>
+</body>
+
+</html>

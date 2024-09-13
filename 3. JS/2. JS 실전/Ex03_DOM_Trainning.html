@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>클릭 한 번 해볼까요?</h1>
+    <button>h1 태그 생성</button>
+    <button>a태그 생성</button>
+    <button>ul태그 생성</button>
+    <div id="txt"></div>
+
+    <script>
+        // 1. 요소를 가져오기 /button 태그 3개, div태그 1개
+        let btns = document.getElementsByTagName('button');
+        console.log(btns)
+        // id를 이용해서 div태그 가져오기
+        // querySelector('CSS선택자')
+        // : CSS 선택자를 기준으로 태그를 한 개 가져오는 기능
+        let div = document.querySelector('#txt')
+        console.log(div)
+
+        // 2. 버튼 태그에 클릭 이벤트 등록
+        btns[0].onclick = function () {
+            // 3. h1 태그를 생성해서 div 안에 넣기~!
+            div.innerHTML += '<h1>즐거운 JavaScript 시간👍👍</h1>';
+        }
+
+        // 4. a태그 생성 버튼을 클릭시 div 태그 내부에 a태그 출력
+        //    단, 이벤트 리스너를 사용해 등록해줄 것
+        btns[1].addEventListener('click', () => {
+            div.innerHTML += '<a href="https://lms.smhrd.or.kr/home/main/indexMain">스마트 인재개발원 홈페이지로 이동~☆*: .｡. o(≧▽≦)o .｡.:*☆</a>'
+        })
+
+        // 5. ul태그 버튼에도 똑같이 이벤트 등록하기
+        btns[2].addEventListener('click', () => {
+            div.innerHTML += `<ul>
+                                <li>🍇포도🍇</li>
+                                <li>🍉수박🍉</li>
+                                <li>🍑복숭아🍑</li>
+                            </ul>`
+        })
+    </script>
+</body>
+
+</html>
