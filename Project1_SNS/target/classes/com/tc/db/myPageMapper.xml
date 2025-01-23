@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tc.db.myPageMapper">
+	<select id="followerList" parameterType="String" resultType="com.tc.model.myPageDTO">
+		SELECT U.USER_NICK AS eruser_nick, U.USER_PROFILE AS eruser_profile
+		FROM FOLLOWS F 
+		JOIN USERS U ON F.FOLLOW_ID = U.USER_ID
+		WHERE F.FOLLOW_ID= #{user_id}
+		GROUP BY F.USER_ID, U.USER_NICK, U.USER_PROFILE
+	</select>
+
+	<select id="followingList" parameterType="String" resultType="com.tc.model.myPageDTO">
+		SELECT U.USER_NICK AS inguser_nick, U.USER_PROFILE AS inguser_profile
+		FROM FOLLOWS F
+		JOIN USERS U
+		ON F.FOLLOW_ID = U.USER_ID
+		WHERE F.USER_ID = #{user_id}
+		GROUP BY F.FOLLOW_ID, U.USER_NICK, U.USER_PROFILE
+	</select>
+	
+	<select id="followingcnt" parameterType="String" resultType="com.tc.model.myPageDTO">
+		SELECT COUNT(*) AS following
+		FROM FOLLOWS 
+		WHERE USER_ID = #{user_id}
+	</select>
+	
+	<select id="followercnt" parameterType="String" resultType="com.tc.model.myPageDTO">
+		SELECT COUNT(*) AS follower
+		FROM FOLLOWS 
+		WHERE FOLLOW_ID = #{user_id}
+	</select>
+</mapper>

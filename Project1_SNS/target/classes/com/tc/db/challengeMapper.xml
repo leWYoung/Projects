@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tc.mapper.challengeMapper">
+
+	<select id="chalSelect" parameterType="com.tc.model.chalDTO"
+		resultType="com.tc.model.chalDTO">
+		select *
+		from CHALLENGES
+	</select>
+
+	<!-- 피드 삽입 sql문 -->
+	<insert id="upload-chal" parameterType="com.tc.model.chalDTO">
+		INSERT INTO CHALLENGES
+		VALUES
+		(chal_idx.nextval,#{chal_title},#{chal_content},#{chal_st_dt},#{chal_ed_dt},#{user_id},
+		<if test="img !=null">#{img}</if>
+		<if test="img == null">NULL</if>,
+		#{tag_name}
+		)
+	</insert>
+
+	<!-- 피드 전체 정보 가져오기 sql -->
+	<select id="getchal" resultType="com.tc.model.chalDTO">
+		SELECT
+		U.USER_NICK,U.USER_PROFILE,U.USER_ID,CH.CHAL_IDX,CH.chal_TITLE,CH.IMG,CH.CHAL_IDX
+		FROM USERS U JOIN
+		CHALLENGES CH
+		ON U.USER_ID = CH.USER_ID
+	</select>
+
+	<select id="detailchal" resultType="com.tc.model.chalDTO">
+		SELECT
+		U.USER_NICK,U.USER_PROFILE,U.USER_ID
+		CH.chal_TITLE,CH.chal_CONTENT,CH.IMG,CH.chal_st_dt,CH.chal_ed_dt
+		FROM
+		USERS U JOIN CHALLENGES CH
+		ON U.USER_ID = CH.USER_ID
+	</select>
+
+	<select id="mychalSelect" parameterType="com.tc.model.chalDTO"
+		resultType="com.tc.model.chalDTO">
+		SELECT *
+		FROM CHALLENGES
+		WHERE USER_ID = #{user_id}
+	</select>
+
+	<select id="getChalDetail" parameterType="int"
+		resultType="com.tc.model.chalDTO">
+		SELECT
+		U.USER_NICK,U.USER_PROFILE,CH.CHAL_TITLE,CH.IMG,CH.CHAL_CONTENT,CH.CHAL_ST_DT,CH.CHAL_ED_dT,
+		U.USER_ID,CH.CHAL_IDX
+		FROM USERS U JOIN CHALLENGES CH
+		ON U.USER_ID =
+		CH.USER_ID WHERE ch.chal_idx = #{chal_idx}
+	</select>
+
+	<insert id="insertPar" parameterType="com.tc.model.cppDTO">
+		INSERT INTO
+		CHALLENGE_PARTICIPATIONS
+		(CHAL_IDX,USER_ID,JOINED_AT)
+		VALUES
+		(#{chal_idx}, #{user_id}, SYSDATE)
+	</insert>
+
+	<select id="getRank" resultType="com.tc.model.cppDTO" parameterType="com.tc.model.cppDTO">
+		SELECT U.USER_ID,U.USER_NICK,U.USER_PROFILE,CH.CHAL_IDX,CH.CHAL_TITLE,COUNT(CP.CHAL_IDX) AS PARTICIPATION_COUNT
+		FROM USERS U JOIN CHALLENGES CH
+		ON U.USER_ID = CH.USER_ID
+		JOIN CHALLENGE_PARTICIPATIONS CP
+		ON CH.CHAL_IDX = CP.CHAL_IDX
+		GROUP BY U.USER_ID,U.USER_NICK,U.USER_PROFILE,CH.CHAL_TITLE,CH.CHAL_IDX
+		ORDER BY PARTICIPATION_COUNT DESC
+	</select>
+	
+	<select id="orderBy" parameterType="String" resultType="com.tc.model.chalDTO">
+		SELECT
+		U.*,CH.*
+		FROM USERS U JOIN
+		CHALLENGES CH
+		ON U.USER_ID = CH.USER_ID
+		WHERE TAG_NAME = #{ob}
+	</select>
+</mapper>
+

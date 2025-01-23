@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tc.db.ChattingMapper">
+	<select id="chattingroom" parameterType="com.tc.model.memberDTO" resultType="com.tc.model.chattingRoomDTO">
+		select *
+		from CHAT_ROOMS
+		where ROOM_INFO = #{user_id} or
+		USER_ID = #{user_id}
+	</select>
+	
+	<insert id="creat" parameterType="com.tc.model.chattingRoomDTO">
+		insert into CHAT_ROOMS(ROOM_TITLE, ROOM_INFO, USER_ID,
+		CREATED_AT, ROOM_LIMITS, ROOM_STATUS)
+		values(#{user_id}'님과'#{room_info}'님의 채팅방', #{room_info}, #{user_id},
+		SYSDATE, 2, 'GOOD')
+	</insert>
+	
+	<select id="chat" parameterType="com.tc.model.chatDTO" resultType="com.tc.model.chatDTO">
+		select *
+		from CHATTINGS
+		where ROOM_IDX = #{room_idx}
+		order by room_idx asc
+	</select>
+	
+	<insert id="chatting" parameterType="com.tc.model.chatDTO">
+		insert into CHATTINGS(ROOM_IDX, CHATTER, CHATTING, EMOTICON,CHAT_FILE,
+		CHATTED_AT) values(#{room_idx}, #{chatter},
+		<if test="chatting != null">#{chatting}</if>
+		<if test="chatting == null">NULL</if>
+		,
+		<if test="emoticon != null">#{emoticon}</if>
+		<if test="emoticon == null">NULL</if>
+		,
+		<if test="chat_file != null">#{chat_file}</if>
+		<if test="chat_file == null">NULL</if>
+		,SYSDATE)
+	</insert>
+</mapper>

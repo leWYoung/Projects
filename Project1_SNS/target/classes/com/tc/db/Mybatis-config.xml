@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- DB 연결을 위한 설정을 지정하는 태그 -->
+<configuration>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver"	value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url" value="jdbc:oracle:thin:@project-db-campus.smhrd.com:1524:xe" />
+				<property name="username" value="cgi_24k_dd26_p2_2" />
+				<property name="password" value="smhrd2" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<!-- mappers : 사용할 mapper 파일을 연결하는 태그 => SQL 문장을 가지고 있는 파일 -->
+	<mappers>
+		<mapper resource="com/tc/db/MemberMapper.xml" />
+		<mapper resource="com/tc/db/ChattingMapper.xml" />
+		<mapper resource="com/tc/db/feedMapper.xml" />
+		<mapper resource="com/tc/db/challengeMapper.xml" />
+		<mapper resource="com/tc/db/myPageMapper.xml" />
+	</mappers>
+</configuration>
