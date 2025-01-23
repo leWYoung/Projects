@@ -1,0 +1,269 @@
+.mini-pro {
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+}
+
+.mini-nic {
+	padding-left: 5px;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.feed-title {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.feed-img {
+	width: 60%;
+	height: 90%;
+	border-radius: 30px;
+}
+
+.button-like {
+	width: 50%;
+	height: 80%;
+}
+
+.feed-move {
+	border: none;
+	background-color: white;
+}
+
+.cate-choice {
+	list-style: none; /* 기본 목록 스타일 제거 */
+	padding: 0; /* 패딩 제거 */
+	display: flex; /* 플렉스 박스 사용 */
+	justify-content: space-around; /* 버튼 간격 조정 */
+	flex-wrap: wrap; /* 여러 줄로 배치 */
+}
+
+.cate-choice input[type="submit"] {
+	background-color: #FF6F61;
+	color: white;
+	border: none;
+	padding: 0 46px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	/* font-size: 16px; */
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+}
+.cate-choice input[type="submit"]:hover {
+	background-color:#FF6F61; /* 호버 시 배경색 변경 */
+}
+
+.feedContainer {
+	padding: 20px;
+	width: 58%;
+	left: 30%;
+	position: relative;
+	height: 200px;
+}
+
+.feed-profile {
+	padding-bottom: 5px;
+}
+
+.feed-content {
+font-size: 15px;
+    padding: 5px;
+    width: 60%;
+    height: 60px ;
+    overflow: hidden;
+}
+
+.feed-img-container {
+	width: 90%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.feed-actions {
+	right: 3%;
+	position: relative;
+	width: 20%;
+	display: flex;
+	gap: 10px;
+	top: 5px;
+}
+
+.button-like {
+	background-color: #f0f0f0;
+	/* 버튼 배경색 */
+	border: 1px solid #ccc;
+	/* 테두리 색 */
+	padding: 10px 15px;
+	/* 패딩 추가 */
+	border-radius: 5px;
+	/* 둥근 모서리 */
+	cursor: pointer;
+	/* 커서 모양 변경 */
+	font-size: 14px;
+	/* 글자 크기 */
+}
+
+.button-comment {
+	color: blue;
+	/* 글자 색상 */
+	text-decoration: none;
+	/* 밑줄 제거 */
+	font-size: 14px;
+	/* 글자 크기 */
+	align-self: center;
+	/* 가운데 정렬 */
+	padding: 10px 15px;
+	/* 패딩 추가 */
+}
+
+/* 좋아요 버튼에 대한 CSS 스타일 */
+.button-like {
+	background: none;
+	/* 배경 제거 */
+	border: none;
+	/* 테두리 제거 */
+	outline: none;
+	/* 클릭 시 외곽선 제거 */
+	padding: 0;
+	/* 내부 여백 제거 */
+	cursor: pointer;
+	/* 클릭 시 포인터 모양으로 변경 */
+}
+
+/* 댓글 버튼 스타일 */
+.button-comment {
+	display: inline-block;
+	/* 인라인 블록으로 표시 */
+	background: none;
+	/* 배경 제거 */
+	border: none;
+	/* 테두리 제거 */
+	text-decoration: none;
+	/* 텍스트 밑줄 제거 */
+	cursor: pointer;
+	/* 포인터 모양으로 변경 */
+	padding: 0;
+	/* 내부 여백 제거 */
+}
+
+/* 댓글 버튼 이미지 스타일 */
+.comment-icon {
+	position: relative;
+	bottom: 18px;
+	width: 45px;
+	height: 30px;
+}
+
+/* 좋아요 버튼 이미지 스타일 */
+.thumb {
+	position: relative;
+	bottom: 20px;
+	width: 45px;
+	height: 30px;
+}
+
+/* 좋아요 갯수 스타일 */
+.like-count {
+	right: 5px;
+	position: relative;
+	bottom: 12px;
+	font-size: 16px;
+	margin-left: -20px;
+	vertical-align: middle;
+	position: relative;
+}
+
+.feed-end {
+	bottom: 20%;
+	padding-bottom: 3px;
+	right: 15%;
+	position: relative;
+	width: 70%
+}
+
+.feed-pick {
+	position: relative;
+	left: 25%;
+	width: 50%;
+}
+
+.hidden-value {
+	display: none; /* input 요소 숨기기 */
+}
+
+.cate-choice {
+	list-style: none; /* 기본 목록 스타일 제거 */
+	padding: 0; /* 패딩 제거 */
+	display: flex; /* 플렉스 박스 사용 */
+	justify-content: space-around; /* 버튼 간격 조정 */
+}
+
+.display-value {
+	background-color:#FF6F61; /* 버튼 배경색 */
+	color: white; /* 텍스트 색상 */
+	padding: 10px 15px; /* 패딩 */
+	border-radius: 5px; /* 모서리 둥글게 */
+	cursor: pointer; /* 커서 모양 변경 */
+	transition: background-color 0.3s; /* 배경색 변경 애니메이션 */
+}
+
+.display-value:hover {
+	background-color:#FF6F61; /* 호버 시 배경색 변경 */
+}
+
+/* 기본 input[type="submit"] 스타일 초기화 */
+input[type="submit"] {
+	background: none;
+	border: none;
+	padding: 0;
+	color: transparent;
+	cursor: pointer;
+	width: 80px;
+	height: 40px;
+	position: relative;
+	z-index: 0;
+}
+
+/* 가상 요소로 data-value 값을 표시 */
+input[type="submit"].custom-button::before {
+	content: attr(data-value); /* data-value 속성 값을 표시 */
+	display: inline-block; /* 인라인 블록 설정 */
+	padding: 10px 15px; /* 여백 설정 */
+	font-size: 16px; /* 글자 크기 */
+	color: #333; /* 텍스트 색상 */
+	background-color: #f1f1f1; /* 배경 색상 */
+	border: 1px solid #ddd; /* 테두리 설정 */
+	border-radius: 5px; /* 둥근 모서리 설정 */
+	text-align: center; /* 텍스트 가운데 정렬 */
+	white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
+	position: absolute; /* 절대 위치 설정 */
+	top: 50%; /* 수직 중앙 정렬 */
+	left: 50%; /* 수평 중앙 정렬 */
+	transform: translate(-50%, -50%); /* 중앙 정렬을 위해 transform 사용 */
+	z-index: 1; /* 가상 요소 우선 순위 조정 */
+}
+
+/* 버튼 hover 시 스타일 */
+.custom-button:hover::before {
+	background-color: #ddd; /* hover 시 배경 색상 변경 */
+}
+
+/* 클릭 후 활성화 시 스타일 */
+.custom-button:active::before {
+	background-color: #ccc; /* active 시 배경 색상 변경 */
+}
+
+.cate-con {
+	position: relative;
+	font-size: 13px;
+	bottom: 30px;
+	left: 10px;
+	font-weight: bold;
+	color: white;
+	bottom: 28px;
+}

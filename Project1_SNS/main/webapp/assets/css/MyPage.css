@@ -1,0 +1,404 @@
+#Feed-area {
+	display: none;
+}
+
+#follower-area {
+	display: none;
+}
+
+#following-area {
+	display: none;
+}
+
+:root {
+	/* Primary Colors */
+	/*  이름  */
+	/* Gradients */
+	--gradient: linear-gradient(45deg, rgba(148, 194, 227, 1) 0%,
+		rgba(72, 136, 181, 1) 100%);
+	--gradient2: linear-gradient(45deg, rgba(148, 194, 227, 1) 0%,
+		rgba(72, 136, 181, 1) 100%);
+	/* Fonts */
+}
+
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--primary: #94c2e3;
+	/* 새로운 스타일 정의 */
+	--white: #d81d1d;
+	--m-blue: #94c2e3;
+	/* 새로운 Minecraft 색상 */
+}
+
+#followButton {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #cbd5e1;
+	/* slate-200 */
+	font-size: 1rem;
+	/* text-base */
+	padding: 0.75rem 1rem;
+	/* px-4 py-3 */
+	border-radius: 0.375rem;
+	/* rounded-md */
+	font-weight: bold;
+	/* font-bold */
+	outline: none;
+	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s;
+	/* 부드러운 전환 효과 */
+}
+
+/* 팔로잉 상태 스타일 */
+.tw-bg-color-background-button-completed {
+	background-color: #f0f9ff;
+	/* 팔로잉 상태의 배경색 */
+	color: #000000;
+	/* slate-700 */
+}
+
+/* 팔로우 상태 스타일 */
+.tw-bg-color-background-button-primary-bold-enabled {
+	background-color: #febe98;
+	/* 팔로우 상태의 배경색 */
+	color: white;
+	/* 텍스트 색상 */
+}
+
+/* SVG 아이콘 색상 */
+.tw-fill-slate-700 {
+	fill: #000000;
+	/* slate-700 */
+}
+
+.tw-fill-white {
+	fill: rgb(255, 255, 255);
+	/* 팔로우 상태의 SVG 색상 */
+}
+
+html, body {
+	margin: 0;
+	width: 100%;
+	min-height: 100vh;
+	overflow-x: hidden;
+	font-family: var(--font-main);
+	scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
+	background-color: var(--bc-gray);
+	transition: background-color .2s ease-in-out;
+}
+
+/* Tab Menu Styles 추가 */
+.tab-menu {
+	display: flex;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 20px;
+}
+
+.tab-button {
+	padding: 10px 20px;
+	border: none;
+	background-color: #f7f7f7;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.tab-button.active {
+	border-bottom: 2px solid #333;
+	background-color: #fff;
+	font-weight: bold;
+}
+
+.tab-button:hover {
+	background-color: #e9e9e9;
+}
+
+.content-section {
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	border: none;
+}
+
+/* Global Classes */
+.flexbox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* User Profile */
+/* 필요함 */
+.username-dev {
+	margin: 0;
+	display: inline-block;
+	color: var(--m-blue);
+	font-size: 2em;
+	cursor: default;
+}
+
+.user-info-bar {
+	left: 50px;
+	position: relative;
+	width: 90%;
+	display: grid;
+	padding: .75em 0 1em 0;
+	background-color: var(--bc);
+	grid-template-columns: 1fr 10% 35% 20% 1fr;
+	grid-template-rows: auto;
+	grid-template-areas:
+		".ufo-bar-col1 .ufo-bar-col2 .ufo-bar-col3 .ufo-bar-col4 .ufo-bar-col5";
+	position: relative;
+	width: 90%;
+}
+
+.ufo-bar-col3-inner {
+	display: flex;
+	padding: .5em 0;
+	position: relative;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.username-wrapper-outer {
+	display: flex;
+	margin: 0 0 0 1.5em;
+	justify-content: center;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.ufo-bar-col3-inner {
+	left: 40px;
+	width: 100%;
+	height: 100%;
+}
+
+.ufo-bar-fff {
+	margin: .25em .5em 0 0;
+	color: var(--dark);
+	display: inline-block;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.ufo-bar-fff span {
+	color: var(--dark);
+	font-weight: 600;
+}
+
+.ufo-bar-col4-inner {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.user-info-bar2 {
+	left: 50px;
+	position: relative;
+	width: 90%;
+	display: grid;
+	color: var(--white);
+	background-color: var(--bc);
+	grid-template-columns: 1fr 16.25% 16.25% 16.25% 16.25% 1fr;
+	grid-template-rows: auto;
+	grid-template-areas:
+		".ufo-bar2-col1 .ufo-bar2-col2 .ufo-bar2-col3 .ufo-bar2-col4 .ufo-bar2-col6 .ufo-bar2-col7";
+	position: relative;
+	width: 90%;
+}
+
+.ufo-bar2-block-active {
+	position: relative;
+	cursor: default;
+}
+
+.ufo-bar2-block {
+	border-bottom: 3px solid var(--bc);
+	cursor: pointer;
+}
+
+.ufo-bar2-block h3 {
+	color: #febe98;
+	font-weight: 700;
+}
+
+.ufo-bar2-block:after {
+	content: "";
+	background: var(--gradient);
+	background-size: 700%;
+	display: block;
+	height: 3px;
+	width: 95%;
+	bottom: 0;
+}
+
+.user-info-bar {
+	grid-template-columns: 1fr 18% 46% 21% 1fr;
+}
+
+.user-info-bar2 {
+	grid-template-columns: 1fr 21.25% 21.25% 21.25% 21.25% 1fr;
+}
+
+/* 프로필 사진 스타일 */
+.profile-pic-wrapper {
+	position: relative;
+	width: auto;
+	/* 원 크기 설정 */
+	height: auto;
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+.profile-pic {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	/* 동그라미 모양 */
+	object-fit: cover;
+	border: 2px solid #ccc;
+}
+
+.profile-pic-wrapper:hover .profile-pic {
+	opacity: 0.7;
+}
+
+.content-center {
+	position: relative;
+	left: 20%;
+	width: 60%;
+}
+
+#content-area, #Feed-area {
+	top: 20px;
+	left: 123px;
+	position: relative;
+	width: 76%;
+}
+
+/* Feed 아이템의 스타일을 지정하는 클래스 */
+.feed-item {
+	height: 200px; border : 1px solid #ddd; /* 경계선을 설정 */
+	border-radius: 10px; /* 경계선의 모서리를 둥글게 설정 */
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+	padding: 20px; /* 내부 여백 추가 */
+	margin: 15px 0; /* 상하 간격 설정 (수직 간격) */
+	transition: transform 0.2s ease-in-out;
+	border: 1px solid #ddd; /* 마우스 오버 시 애니메이션 효과 */
+}
+
+.feed-item:hover {
+	transform: scale(1.02); /* 마우스 오버 시 확대 효과 */
+	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* 마우스 오버 시 그림자 효과 */
+}
+
+/* 이미지가 포함된 td의 스타일 지정 */
+.feed-img-td {
+	text-align: center; /* 이미지를 중앙 정렬 */
+	padding: 10px 0; /* 상하 여백 추가 */
+}
+
+.feed-title {
+	position: relative;
+    font-weight: bold;
+    left: 20px;
+    font-size: 20px;
+}
+/* 이미지의 스타일 지정 */
+.feed-img {
+	bottom: 32px;
+    left: 45%;
+    position: relative;
+    width: 135%;
+    height: 160px;
+    border-radius: 5px;
+}
+
+/* 제목의 스타일 지정 */
+.feed-item h2 {
+	font-size: 1.5rem; /* 제목의 글꼴 크기 설정 */
+	margin: 10px 0; /* 제목과 다른 요소들 간의 간격 설정 */
+}
+
+/* a 태그의 스타일 지정 */
+.feed-move {
+	text-decoration: none; /* 링크의 밑줄 제거 */
+	color: inherit; /* 글자 색상 상속 */
+	display: block; /* 링크 전체를 클릭 가능하도록 설정 */
+	margin-bottom: 20px; /* 각 피드 간의 간격 설정 */
+}
+
+button {
+	display: inline-block;
+	width: 80%; /* 버튼 너비 조정 */
+	max-width: 500px; /* 최대 너비 제한 */
+	background-color: #f4f4f4; /* feed-area와 유사한 배경색 */
+	color: #333; /* 버튼 텍스트 색상 */
+	padding: 15px 20px; /* 버튼의 패딩 (안쪽 여백) */
+	margin: 10px 0; /* 버튼 사이의 간격 */
+	border: 1px solid #ddd; /* 테두리 색상 및 스타일 */
+	border-radius: 10px; /* 모서리 둥글게 */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+	cursor: pointer; /* 커서 모양 */
+	text-align: center; /* 텍스트 가운데 정렬 */
+	transition: all 0.3s ease-in-out; /* 버튼 스타일 전환 효과 */
+}
+
+button:hover {
+	background-color: #e0e0e0; /* hover 시 배경색 변화 */
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* hover 시 그림자 변화 */
+}
+
+button:active {
+	background-color: #d0d0d0; /* 클릭 시 배경색 변화 */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 클릭 시 그림자 크기 줄임 */
+}
+
+button span {
+	font-size: 1rem; /* 텍스트 크기 */
+	font-weight: bold; /* 텍스트 굵기 */
+}
+
+/* 공통 input 필드 스타일 */
+.input-field {
+	width: 300px; /* 필드 넓이 */
+	height: 35px; /* 필드 높이 */
+	padding: 10px;
+	margin-bottom: 15px; /* 아래 간격 */
+	font-size: 14px; /* 글자 크기 */
+	border: 1px solid #ccc; /* 테두리 색상 */
+	border-radius: 8px; /* 모서리 둥글게 */
+	outline: none; /* 포커스 시 외곽선 제거 */
+	box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* 안쪽 그림자 */
+	transition: border-color 0.3s ease; /* 테두리 변화 애니메이션 */
+}
+
+.input-field:focus {
+	border-color: #008ABF; /* 포커스 시 테두리 색상 변경 */
+}
+
+/* 공통 submit 버튼 스타일 */
+.submit-button {
+	width: 150px; /* 버튼 넓이 */
+	height: 40px; /* 버튼 높이 */
+	background-color: #FF6F61; /* 배경색 */
+	color: white; /* 글자색 */
+	border: none; /* 테두리 제거 */
+	border-radius: 8px; /* 모서리 둥글게 */
+	cursor: pointer; /* 커서 포인터 */
+	font-size: 14px; /* 글자 크기 */
+	transition: background-color 0.3s ease; /* 배경색 변화 애니메이션 */
+	margin-bottom: 20px; /* 아래 간격 */
+}
+
+/* 버튼 hover 시 스타일 */
+.submit-button:hover {
+	background-color: #FF6F61; /* hover 시 배경색 변경 */
+}

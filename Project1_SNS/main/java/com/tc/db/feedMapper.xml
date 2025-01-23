@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tc.mapper.FeedMapper">
+	<!-- 메인 페이지용 -->
+	<!-- <select id="feedSelect" parameterType="com.tc.model.feedDTO" resultType="com.tc.model.feedDTO"> 
+		select F.*,U.* from FEED F JOIN USERS U ON F.USER_ID = U.USER_ID </select> -->
+	<select id="feedSelect" parameterType="com.tc.model.feedDTO"
+		resultType="com.tc.model.feedDTO">
+		select F.feed_idx, F.feed_title, F.feed_content,
+		F.feed_img, F.user_id,
+		U.user_profile, U.user_nick
+		from FEED F
+		JOIN USERS U ON F.USER_ID = U.USER_ID
+	</select>
+
+	<!-- 피드 삽입 sql문 -->
+	<insert id="upload-feed" parameterType="com.tc.model.feedDTO">
+		INSERT INTO FEED
+		VALUES
+		(feed_idx.nextval,#{feed_title},#{feed_content},SYSDATE,
+		<if test="feed_img !=null">#{feed_img}</if>
+		<if test="feed_img == null">NULL</if>
+		,#{user_id}
+		)
+	</insert>
+
+	<!-- 피드 전체 정보 가져오기 sql -->
+	<select id="getFeed" resultType="com.tc.model.feedDTO">
+		SELECT
+		U.USER_NICK,U.USER_PROFILE,FD.FEED_TITLE,FD.FEED_CONTENT,FD.FEED_IMG,FD.FEED_IDX
+		FROM USERS U JOIN
+		FEED FD
+		ON U.USER_ID = FD.USER_ID
+		ORDER BY FEED_IDX DESC
+	</select>
+
+	<select id="detailFeed" resultType="com.tc.model.feedDTO">
+		SELECT
+		U.USER_NICK,U.USER_PROFILE,
+		FD.FEED_TITLE,FD.FEED_CONTENT,FD.FEED_IMG,FD.FEED_DATE
+		FROM USERS U
+		JOIN FEED FD
+		ON U.USER_ID = FD.USER_ID
+	</select>
+
+	<select id="myFeedSelect" parameterType="com.tc.model.feedDTO"
+		resultType="com.tc.model.feedDTO">
+		SELECT *
+		FROM FEED
+		WHERE USER_ID = #{user_id}
+	</select>
+
+	<select id="getFeedDetail" parameterType="int"
+		resultType="com.tc.model.feedDTO">
+		SELECT
+		U.USER_NICK,U.USER_PROFILE,FD.FEED_TITLE,FD.FEED_IMG,FD.FEED_CONTENT
+		FROM USERS U JOIN FEED FD
+		ON U.USER_ID = FD.USER_ID
+		WHERE fd.feed_idx =
+		#{feed_idx}
+	</select>
+
+</mapper>
+
